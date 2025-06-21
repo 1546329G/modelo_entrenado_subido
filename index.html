@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Letras</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            background-color: #e0f2f7; /* Un azul claro */
+            color: #333;
+        }
+
+        h1 {
+            color: #005f73; /* Un azul más oscuro */
+            margin-bottom: 30px;
+        }
+
+        canvas {
+            border: 3px solid #005f73; /* Borde más pronunciado */
+            background-color: black;
+            cursor: crosshair;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            border-radius: 8px; /* Bordes ligeramente redondeados */
+        }
+
+        button {
+            margin: 15px 10px; /* Espaciado entre botones */
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #007bff; /* Azul vibrante */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+        }
+
+        #resultado {
+            margin-top: 25px;
+            font-size: 28px; /* Texto de resultado más grande */
+            font-weight: bold;
+            color: #005f73;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clasificador de Letras</h1>
+    <canvas id="canvas" width="280" height="280"></canvas>
+    <div>
+        <button onclick="predecir()">Predecir Letra</button>
+        <button onclick="limpiarCanvas()">Limpiar</button>
+    </div>
+    <p>Dibuja una letra mayúscula y presiona "Predecir Letra"</p>
+    <div id="resultado">Predicción: </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
